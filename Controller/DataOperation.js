@@ -39,6 +39,7 @@ const Employee = {
     getEmployeeSid:async (req,res)=>{
        try{
          const data = await ManagerSchema.findOne({email:req.query.ManagerEmail});
+         console.log(data)
          const Employee  = data.employeeData.filter((elem)=>{
             return elem.employeeEmail === req.query.email;
          })
